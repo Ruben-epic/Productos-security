@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head th:insert="fragments :: headerfiles">
+    </head>
+    <body>
+        <header th:insert="fragments :: nav"></header>
+
+        <div class="container">
+            <div class="jumbotron">
+                <h1 class="display-4">Hello, word</h1>
+                <p class="lead">Hola a todos como esta espero que bien</p>
+                <hr class="my-4">
+                <p>it jesus name ame. classmetes family teache and my class i your protection</p>
+                <a href="#" class="btn btn-primary btn-lg" role="button">Learn more</a>
+            </div>
+        </div>
+
+        <footer th:insert="fragments :: footer">
+        </footer>
+
+        <div th:insert="fragments :: scripts"></div>
+    </body>
+</html>
