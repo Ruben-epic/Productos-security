@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="fragments :: headerfiles">
+</head>
+<body>
+<header th:insert="fragments :: nav"></header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <h5 class="mb-4">Nuevo Producto</h5>
+            <form th:action="@{/producto/guardar}" method="post">
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre del Producto</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" required aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="precio" class="form-label">Precio del producto (DOP)</label>
+                    <input type="number" class="form-control" id="precio" name="precio" required value="1">
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-outline-success form-control"><i class="fa-solid fa-floppy-disk"></i> Guardar</button>
+                </div>
+            </form>
+            <a th:href="@{/producto/lista}"><button type="submit" class="btn btn-outline-success btn-block form-control"><i class="fa-solid fa-circle-left"></i> Volver</button></a>
+            <div th:if="${error}" class="alert alert-danger alert-dismissible fade show" role="alert">
+                <p th:text="${error}"></p>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer th:insert="fragments :: footer">
+</footer>
+
+<div th:insert="fragments :: scripts"></div>
+</body>
+</html>

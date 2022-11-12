@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="fragments :: headerfiles">
+</head>
+<body>
+<header th:insert="fragments :: nav"></header>
+
+<div class="container">
+    <div class="card">
+        <div class="card-header text-center">
+            Detalles del Producto
+        </div>
+        <div class="card-body">
+            <h5 class="card-title" th:text="'Nombre ' + ${producto.nombre}"></h5>
+            <p class="card-text" th:text="'Precio: ' + ${producto.precio} + '$'"></p>
+            <p class="text-justify"><b>Descripcion: </b> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam atque autem, consequatur cupiditate doloremque eaque esse est expedita impedit incidunt laboriosam nam natus quibusdam quod unde vel veniam vero voluptatum.</p>
+            <a th:href="@{/producto/lista}" class="btn btn-outline-info"><i class="fa-solid fa-circle-left"></i> Volver</a>
+
+        </div>
+    </div>
+</div>
+
+<footer th:insert="fragments :: footer">
+</footer>
+
+<div th:insert="fragments :: scripts"></div>
+</body>
+</html>
